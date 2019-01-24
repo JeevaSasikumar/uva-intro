@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import java.text.DecimalFormat;
+
+class Main {
+	public static void main (String[] args) {
+	  Scanner ip=new Scanner(System.in);
+	  while(true)
+	  {
+	      String input=ip.nextLine();
+	      if(input.equals("0:00"))
+	       {
+	          break;
+	       }
+	      int len=input.length();
+	      String min=input.substring(len-2);
+	      String hr=input.substring(0,len-3);
+	      int minute=Integer.parseInt(min);
+	      int hour=Integer.parseInt(hr);
+	       hour = hour * 5;
+          if (hour < minute)
+          hour = hour + 60;
+          double op = (hour - minute + minute / 12.0) * 6;
+          op = (op > 180 ? 360 - op : op);
+          op = (op >= 0 ? op : -op);
+          double output=(Math.round(op*10)/10.0);
+          System.out.println(output+"00");
+	  }
+	  
+	}
+}

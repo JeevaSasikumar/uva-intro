@@ -1,0 +1,32 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+class Main
+{
+	public static void main (String[] args)
+	{
+	    Scanner ip=new Scanner(System.in);
+	   ArrayList<Integer> a=new ArrayList<>();
+	    while(ip.hasNextInt())
+	    {
+	      
+	      a.add(ip.nextInt());
+	      Collections.sort(a);
+	      int size=a.size();
+	      
+	      if(a.size()%2==1)
+	      {
+	          size=size/2;
+	       System.out.println(a.get(size));
+	      }
+	      else
+	      {
+	          size=size/2;
+	          System.out.println((a.get(size)+a.get(size-1))/2); 
+	      }
+	    }
+	        
+	    
+	}
+}
