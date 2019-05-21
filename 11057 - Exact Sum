@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main (String[] args) {
+	Scanner ip=new Scanner(System.in);
+	while(ip.hasNextInt()){
+	    int n=ip.nextInt();
+	    int a[]=new int[n];
+	    for(int i=0;i<n;i++)
+	        a[i]=ip.nextInt();
+        int k=ip.nextInt();
+        int min=0,max=0;
+        Arrays.sort(a);
+        for(int i=0;i<n-1;i++){
+            for(int j=i+1;j<n;j++){
+            if(a[i]+a[j]==k){
+                min=a[i];
+                max=a[j];
+                break;
+            }
+            }
+        }
+        System.out.println("Peter should buy books whose prices are "+min+" and "+max+".\n");
+
+	}
+	
+	}
+}
